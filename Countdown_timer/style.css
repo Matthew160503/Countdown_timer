@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap');
+
+:root{
+    
+    --gradient: linear-gradient(to right bottom, rgb(37 135 215), rgb(62 167 103));
+    --background: linear-gradient(to right bottom, rgb(28, 72, 107),rgb(25, 42, 55));
+    font-family: 'Syncopate';
+    font-size: 24px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--background);
+    color: white;
+}
+
+.timer{
+    background: var(--gradient);
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.timer__title{
+    font-size: 2rem;
+}
+
+.timer__container{
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.timer__item{
+    position: relative;
+    width: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.timer__item:not(:last-child){
+    margin-right: 16px;
+}
+
+.timer__circle{
+    --size: 70px;
+    width: var(--size);
+    height: var(--size);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer__num{
+    font-size: 1.5rem;
+    font-weight: 400;
+    background: linear-gradient(-125deg, #2FB8FF, #9EECD9);
+    background-clip: text;
+    filter: saturate(170%) blur(0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+
+}
+
+.timer__name{
+    font-size: 0.75rem;
+    margin-top: 24px;
+    font-weight: 400;
+}
+
+.circle{
+    --offset: -10px;
+    position: absolute;
+    top: var(--offset);
+    right: var(--offset);
+    bottom: var(--offset);
+    left: var(--offset);
+    transform: rotate(-90deg);
+}
+
+.segment{
+    fill: rgb(0, 0, 0, 0.15);
+    stroke: url(#gradient);
+    stroke-width: 1px;
+    stroke-dasharray: 60 60;
+    stroke-linecap: round;
+    transform: scale(4.7);
+    transform-origin: center;
+    transition: stroke-dasharray 1000ms linear;
+}
+
+@media (max-width: 1024px){
+    .timer{
+        padding: 15px;
+    }
+
+    .timer__title{
+        font-size: 1.75rem;
+    }
+
+    .timer__container{
+        margin-top: 20px;
+    }
+
+    .timer__num{
+        font-size: 1.2rem;
+    }
+
+    .timer__name{
+        font-size: 0.6rem;
+    }
+
+    .timer__item{
+        width: 90px;
+    }
+    
+    .timer__item:not(:last-child){
+        margin-right: 10px;
+    }
+
+    .timer__circle{
+        --size:50px;
+    }
+
+}
+
+@media (max-width: 600px){
+    .timer{
+        padding: 10px;
+    }
+
+    .timer__title{
+        font-size: 1rem;
+    }
+
+    .timer__container{
+        margin-top: 15px;
+    }
+
+    .timer__num{
+        font-size: 0.9rem;
+    }
+
+    .timer__name{
+        font-size: 0.5rem;
+        margin-top: 16px;
+    }
+
+    .timer__item{
+        width: 70px;
+        padding: 8px;
+    }
+    
+    .timer__item:not(:last-child){
+        margin-right: 10px;
+    }
+
+    .timer__circle{
+        --size:40px;
+    }
+
+}
